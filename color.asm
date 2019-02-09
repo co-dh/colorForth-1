@@ -324,7 +324,7 @@ num:
 
 comma:
 	mov ecx, 4
-dcomma:	mov edx, [H]
+dcomma:	mov edx, [H] ; move ecx bytes from eax to H and eax = pop, next instruction.
 	mov [edx], eax
 	mov eax, [esi]				; drop
 	lea edx, [ecx+edx]
@@ -357,7 +357,7 @@ semi:
 	inc dword [H]
 	ret
 
-then:
+then: ;list<- esp, *(eax-1) = h-eax
 	mov [list], esp
 	mov edx, [H]
 	sub edx, eax

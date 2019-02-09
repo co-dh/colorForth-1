@@ -32,7 +32,7 @@ fifof:
 graphic:
 	ret
 
-switch:
+switch: ;cp frame -> displ
 	push esi
 	mov esi, dword [frame]
 	push edi
